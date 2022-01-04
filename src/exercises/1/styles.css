@@ -1,0 +1,26 @@
+.card {
+	background-color: #edb106;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 2%;
+	box-shadow: 2px 2px gray;
+}
+.card__image {
+	width: 100%;
+}
+
+.card__actions {
+	align-self: center;
+	margin-bottom: 5px;
+}
+
+.card__headline {
+	align-self: center;
+}
+
+.card__headline h3 {
+	padding: 3px;
+	border-radius: 2%;
+	font-style: italic;
+}
