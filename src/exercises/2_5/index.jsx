@@ -1,4 +1,7 @@
 import React from "react";
+import Button from "../components/Button";
+import Typography from "../components/Typography";
+import Checkbox from "../components/Checkbox";
 
 /**
  * ## Reusable components
@@ -8,7 +11,16 @@ import React from "react";
  * 4. Make a reusable List and ListItem component
  */
 const Exercise = () => {
-	return <h1>Exercise 2.5</h1>;
+	return (
+		<span>
+			<Checkbox></Checkbox>
+			<Typography variant="headline">TestTypo</Typography>
+			<Button className={"irgendwas"} aria-label={"gelb"}>
+				click me
+			</Button>
+			{React.createElement(Button, { className: "Hallo", "aria-label": "blau" }, "rot")}
+		</span>
+	);
 };
 
 export default Exercise;

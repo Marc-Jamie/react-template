@@ -1,0 +1,12 @@
+.Typography {
+	font-size: x-large;
+	font-family: sans-serif;
+}
+
+.headline {
+	font-family: "Courier New", Courier, monospace;
+}
+
+.footnote {
+	font-style: 0.7em;
+}
