@@ -41,15 +41,15 @@ const HTMLOutput = ({ outerRef }) => {
 /**
  * This Component outputs all props that can be stringified (i.e. functions are ignored)
  */
-const ComponentA = (props) => {
-	return <Code code={props} />;
+const ComponentA = (hippetyhoppetysthesearepropertys) => {
+	return <Code code={hippetyhoppetysthesearepropertys} />;
 };
 
 /**
  * This Component uses object destructuring. It only outputs the "rest"
  */
-const ComponentB = ({ foo, bar, ...rest }) => {
-	return <Code code={rest} />;
+const ComponentB = ({ foo, bar, ...restProps }) => {
+	return <Code code={restProps} />;
 };
 
 /**
@@ -65,15 +65,17 @@ const ComponentC = (props) => {
 		</div>
 	);
 };
-
+const a = { b: 1 };
+console.log({ ...a, a });
 /**
  * This Component picks "color" and adds it to the style attribute
  */
-const ComponentD = ({ color, style = {}, ...rest }) => {
+const ComponentD = ({ color, fontSize, style = { background: "orange" }, ...rest }) => {
 	const ref = useRef(null);
+	// console.log({ style, color, fontSize });
 	return (
 		<div>
-			<div ref={ref} {...rest} style={{ ...style, color }} />
+			<div ref={ref} {...rest} style={{ ...style, color, fontSize }} />
 			<HTMLOutput outerRef={ref} />
 		</div>
 	);
@@ -117,10 +119,11 @@ const Exercise = () => {
 	return (
 		<div>
 			<h1>Exercise 2.6</h1>
+			<Code code={[10, "fünf"]} />
 			<h2>ComponentA</h2>
 			<p>All properties are passed on</p>
-			<ComponentA foo="foo" bar={`BA${"r".toUpperCase()}`} />
-			<ComponentA age={26} name={{ first: "Max", last: "Harrington" }} />
+			<ComponentA lala="la - la " test="Teeeest" foo="foo" bar={`Ba${"r".toUpperCase()}`} />
+			<ComponentA age={26} name={{ first: "Max", last: "Harrington" }} height={22} />
 			<h2>ComponentB</h2>
 			<p>
 				Some properties were removed by{" "}
@@ -146,7 +149,14 @@ const Exercise = () => {
 			<ComponentC color="red" foo="foo" bar="bar" />
 			<h2>ComponentD</h2>
 			<p>Color is removed and added to style</p>
-			<ComponentD color="red" foo="foo" bar="bar" />
+			<ComponentD
+				color="red"
+				fontSize="12px"
+				foo="foo"
+				bar="bar"
+				style={{ color: "purple", fontSize: "5em" }}
+			/>
+			<ComponentD color="red" />
 			<h2>ComponentE</h2>
 			<ComponentE color="red" background="yellow" />
 			<h2>ComponentF</h2>
