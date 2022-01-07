@@ -10,6 +10,7 @@ import styles from "./typography.modules.css";
 // 	);
 // };
 
+//working
 const tagNames = {
 	h1: "h1",
 	h2: "h2",
@@ -28,3 +29,17 @@ const Typography = ({
 	return <Component className={[className, styles[variant]].join(" ")}>{children}</Component>;
 };
 export default Typography;
+
+// const variants = {
+// 	headline: "h1",
+// 	h2: "h2",
+// 	h3: "h3",
+// 	footnote: "p",
+// };
+
+// const Typography = ({ children, className, variant = "headline", element = variants[variant] }) => {
+// 	const Element = element ?? "span";
+// 	return <Element className={[className, styles[variant]].join(" ")}>{children}</Element>;
+// };
+
+// export default Typography;

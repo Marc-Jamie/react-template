@@ -14,7 +14,11 @@ const Exercise = () => {
 	return (
 		<span>
 			<Checkbox></Checkbox>
-			<Typography variant="h1">TestTypo</Typography>
+
+			<Typography element="footnote" variant="headline">
+				TestTypo
+			</Typography>
+
 			<Button className={"irgendwas"} aria-label={"gelb"}>
 				click me
 			</Button>
